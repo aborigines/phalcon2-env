@@ -73,3 +73,7 @@ $di->setShared('session', function () {
 
     return $session;
 });
+
+$di->setShared('config', function() use ($config) {
+    return $config;
+});

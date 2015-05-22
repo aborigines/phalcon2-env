@@ -1,7 +1,8 @@
 {
     "require": {
         "phalcon/devtools": "dev-master",
-        "swiftmailer/swiftmailer": "^5.4"
+        "phalcon-ext/mailer": "~2.0",
+        "symfony/var-dumper": "^2.6"
     },
     "require-dev": {
         "phpunit/phpunit": "4.6.*"

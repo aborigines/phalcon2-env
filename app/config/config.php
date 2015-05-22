@@ -18,5 +18,17 @@ return new \Phalcon\Config(array(
         'libraryDir'     => __DIR__ . '/../../app/library/',
         'cacheDir'       => __DIR__ . '/../../app/cache/',
         'baseUri'        => '',
-    )
+    ),
+    'mail' => [
+        'driver'     => 'smtp',
+        'host'       => 'smtp.gmail.com',
+        'port'       => 465,
+        'encryption' => 'ssl',
+        'username'   => 'example@gmail.com',
+        'password'   => 'xxxx',
+        'from'       => [
+                'email' => 'example@gmail.com',
+                'name'  => 'YOUR FROM NAME'
+            ]
+        ],
 ));

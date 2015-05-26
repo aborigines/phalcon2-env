@@ -7,11 +7,30 @@ use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Events\Manager as EventsManager;
 
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
  */
 $di = new FactoryDefault();
+
+/**
+ * set dispatcher
+ */
+$di->set('dispatcher', function() use ($di) {
+
+    $eventsManager = new EventsManager();
+
+    // Listen for events from the permission class
+
+    $eventsManager->attach('dispatch:beforeDispatch', new SecurityPlugin);
+
+    $dispatcher = new Phalcon\Mvc\Dispatcher();
+    $dispatcher->setEventsManager($eventsManager);
+
+    return $dispatcher;
+
+});
 
 /**
  * The URL component is used to generate all kind of urls in the application
@@ -74,6 +93,9 @@ $di->setShared('session', function () {
     return $session;
 });
 
-$di->setShared('config', function() use ($config) {
+/**
+ * share load config
+ */
+$di->set('config', function() use ($config) {
     return $config;
 });

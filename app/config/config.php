@@ -6,7 +6,7 @@ return new \Phalcon\Config(array(
         'host'        => 'localhost',
         'username'    => 'root',
         'password'    => 'root',
-        'dbname'      => 'test',
+        'dbname'      => 'phalcon-dev',
         'charset'     => 'utf8',
     ),
     'application' => array(
@@ -17,7 +17,8 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => __DIR__ . '/../../app/plugins/',
         'libraryDir'     => __DIR__ . '/../../app/library/',
         'cacheDir'       => __DIR__ . '/../../app/cache/',
-        'baseUri'        => '',
+        'pluginsDir'     => __DIR__ . '/../../app/plugins/',
+        'baseUri'        => '/',
     ),
     'mail' => [
         'driver'     => 'smtp',

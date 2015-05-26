@@ -9,7 +9,8 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-    	
+
+    	echo "axee";
     }
 
     public function sendmailAction()

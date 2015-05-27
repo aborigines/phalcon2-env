@@ -55,6 +55,7 @@ class SecurityPlugin extends Plugin
 			//Public area resources
 			$publicResources = array(
 				'index'      => array('index'),
+				'auth'		 => array('login','logout'),
 				'about'      => array('index'),
 				'register'   => array('index'),
 				'errors'     => array('show401', 'show404', 'show500'),

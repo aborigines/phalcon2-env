@@ -1,0 +1,19 @@
+
+<h1> Login </h1>
+
+<form method="POST" action="">
+<p>
+	<label for="username">UserName</label>
+	<input type="text" name="username">
+</p>
+
+<p>
+	<label for="password">Password</label>
+	<input type="password" name="password">
+</p>
+
+<p>
+	<input type="hidden" name="csrf" value="<?php echo $this->security->getToken() ?>"/>
+	<button class='btn'>Submit</button>
+</p>
+</form>

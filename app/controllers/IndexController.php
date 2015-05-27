@@ -1,4 +1,5 @@
 <?php
+namespace App\Controllers;
 
 use Phalcon\Mvc\View;
 use Phalcon\Config;
@@ -7,10 +8,14 @@ use Phalcon\Ext\Mailer\Manager as Mailer;
 class IndexController extends ControllerBase
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+    }	
+
     public function indexAction()
     {
-
-    	echo "axee";
+    	$this->tag->appendTitle('Index');
     }
 
     public function sendmailAction()

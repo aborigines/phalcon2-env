@@ -1,1 +1,4 @@
 /vendor
+app/config/config.ini*
+cache/volt/*.php
+*.glue

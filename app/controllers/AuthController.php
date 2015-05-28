@@ -10,20 +10,24 @@ class AuthController extends ControllerBase
 
 	public function loginAction()
 	{
+		$isAuth = $this->session->get('auth');
+
+		if($isAuth)
+		{
+			$this->response->redirect('/');
+		}
+		
 		// set setitle
 		$this->tag->appendTitle('Login');
 
-		if ($this->request->isPost()) 
+		if ($this->request->isPost() && $this->security->checkToken()) 
 		{
 			$username = $this->request->getPost('username');
 			$password = $this->request->getPost('password');
 			// dump($this->session->set('auth'));
 			if ( $username == 'a' && $password == 'a') {
 				$this->session->set('auth',true);
-			} else {
-				$this->session->set('auth',false);
-				dump($this->session->get('auth'));
-				exit();
+				$this->response->redirect('user');
 			}
 		}
 	}

@@ -43,6 +43,7 @@ class SecurityPlugin extends Plugin
 
 			//Private area resources
 			$privateResources = array(
+				'user'		=> array('index'),
 				'companies'    => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'products'     => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
@@ -116,7 +117,7 @@ class SecurityPlugin extends Plugin
 				'controller' => 'errors',
 				'action'     => 'show401'
 			));
-			$this->session->destroy();
+			// $this->session->destroy();
 			return false;
 		}
 	}

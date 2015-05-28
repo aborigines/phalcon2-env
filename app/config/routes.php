@@ -33,6 +33,14 @@ $router->add(
     ]
 );
 
+$router->add(
+    '/user',
+    [
+        'controller' => 'user',
+        'action'     => 'index',
+    ]
+);
+
 /* 
  * error 
 */
